@@ -1,0 +1,62 @@
+首先下载对应的git版本
+https://git-scm.com/downloads
+一路Next安装，无难度
+然后初次使用前git配置，在命令行中输入：
+git config --global user.name "用户名（用英文）"
+git config --global user.email "邮箱"
+用git config --list检查
+C:\Users\Administrator>git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+diff.astextplain.textconv=astextplain
+rebase.autosquash=true
+credential.helper=manager
+user.name=shaohua
+user.email=zsh1052360709@126.com
+
+理论基础
+git的设计让使用者觉得比想象中的笨
+不要高估自己的智商，不要低估Git的能耐
+两点：git的记录是什么？ SVN记录的是每一次版本变动的内容
+Git是将每个版本独立保存
+普通的程序员是把很多的时间放在写代码和调bug上，而优秀的程序员是将更多的精力放在设计上！
+
+三棵树：working directory 工作区
+stage 临时的改动
+repository （head）最新提交的内容
+
+Git的工作流程
+1. 在工作目录中添加，修改文件
+2. 将需要进行版本管理的文件放入暂存区域
+3. 将暂存区域的文件提交到GIt仓库
+
+Git管理的文件有三种状态：
+-已修改（modified）
+-已暂存（staged）
+-已提交（commited）
+
+首先建立一个大本营，找一个文件夹，存放项目的位置
+cmd中切换到制定文件夹Myproject
+git init 就会在文件夹里看到隐藏的文件 勿动 
+创建一个readme.md（md是markdown语言写的文本）
+用notepad++编辑readme.md
+命令行中输入 git add readme.md
+文件提交到git仓库 git commit -m "add a readme file"
+
+git commit -m "add a readme file"
+[master (root-commit) 27fefc1] add a readme file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md  100普通文件 644文件权限
+ 
+ 
+ 彩蛋：除了初始化git仓库，还可以clone其他人的github
+ 直接在命令行输入 git clone 目标 
+ git clone https://github.com/n0tr00t/Sreg
+
